@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "54166506-9b59-48d7-b9e9-0c803ef1530e",
+		"name": "API Test",
+		"description": "All APIs for Book Inventory Management App are available here.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostMethods",
+			"item": [
+				{
+					"name": "ForSignup",
+					"item": [
+						{
+							"name": "SignupRequest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userEmailId\":\"abc@gmail.com\",\r\n    \"userPassword\":\"123456\",\r\n    \"stores\":[\r\n        {\r\n                \"storeName\":\"Novels\"\r\n        }\r\n    ]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/app/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"signup"
+									]
+								},
+								"description": "This is for SignUp. When user enters details and Submit. This API return an UserId."
+							},
+							"response": []
+						}
+					],
+					"description": "This is for SignUp. When user enters details and Submit. This API return an UserId."
+				},
+				{
+					"name": "ForSignin",
+					"item": [
+						{
+							"name": "SigninRequest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"5\",\r\n    \"userPassword\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/app/signin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User have to submit UserId and password for login."
+				},
+				{
+					"name": "ForAddNewBook",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"googleBookId\":\"a1NGAQAAMAAJ\",\r\n    \"bookTitle\":\"Trippings in Author-land\",\r\n    \"numberOfCopies\":20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/app/add-book/user/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"add-book",
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User can add new Book using this API"
+				}
+			]
+		},
+		{
+			"name": "GetMethods",
+			"item": [
+				{
+					"name": "GetListOFStores",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/app/2/get-stores",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"2",
+										"get-stores"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User can get List of Stores according to the user Id."
+				},
+				{
+					"name": "ListOFBooksInTheStore",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/app/user/2/get-books",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"user",
+										"2",
+										"get-books"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User can List out all the books in inventory inside the store by providing store Id."
+				}
+			]
+		},
+		{
+			"name": "Putmethods",
+			"item": [
+				{
+					"name": "UpdateBook",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"googleBookId\":\"a1NGAQAAMAAJ\",\r\n    \"bookTitle\":\"English Porcelain\",\r\n    \"numberOfCopies\":20\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/app/user/store/1/update-book",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"user",
+										"store",
+										"1",
+										"update-book"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User can update the details of existing book."
+				}
+			]
+		},
+		{
+			"name": "DeleteMethods",
+			"item": [
+				{
+					"name": "removeBook",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/app/remove-book/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"app",
+										"remove-book",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "User can delete existing book."
+				}
+			]
+		}
+	]
+}
